@@ -2,8 +2,8 @@ import { LoginScreen } from "@/src/screens/LoginScreen";
 import { useQuery } from "@apollo/client/react";
 import { Text, View } from "react-native";
 import { useSelector } from "react-redux";
-import { ME_QUERY, MeQuery } from "../..//src/graphql/queries";
-import { RootState } from "../../src/store";
+import { type MeQuery, ME_QUERY } from "../..//src/graphql/queries";
+import type { RootState } from "../../src/store";
 
 export default function Home() {
   const token = useSelector((state: RootState) => state.auth.token);

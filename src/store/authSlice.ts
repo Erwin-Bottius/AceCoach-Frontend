@@ -1,11 +1,11 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { User } from "../types/user";
+import { type PayloadAction, createSlice } from "@reduxjs/toolkit";
+import type { User } from "../types/user";
 
-type AuthState = {
+interface AuthState {
   token: string | null;
   refreshToken: string | null;
   user: User | null;
-};
+}
 
 const initialState: AuthState = {
   token: null,

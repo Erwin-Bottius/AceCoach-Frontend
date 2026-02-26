@@ -6,22 +6,15 @@ import { useDispatch } from "react-redux";
 import { AuthInput } from "../../components/AuthInput";
 import { Logo } from "../../components/Logo";
 import { PrimaryButton } from "../../components/PrimaryButton";
-import {
-  LOGIN_MUTATION,
-  LoginResponse,
-  LoginVariables,
-} from "../graphql/mutations";
+import { type LoginResponse, type LoginVariables, LOGIN_MUTATION } from "../graphql/mutations";
+
 import { loginUser } from "../store/authSlice"; // ton slice Redux
 
 export const LoginScreen = () => {
   const dispatch = useDispatch();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  const [loginMutation, { loading }] = useMutation<
-    LoginResponse,
-    LoginVariables
-  >(LOGIN_MUTATION);
+  const [loginMutation, { loading }] = useMutation<LoginResponse, LoginVariables>(LOGIN_MUTATION);
 
   const handleLogin = async () => {
     try {
@@ -56,9 +49,7 @@ export const LoginScreen = () => {
           <Logo />
         </View>
 
-        <Text className="text-2xl font-bold text-center text-slate-900 mb-2">
-          Welcome Back
-        </Text>
+        <Text className="text-2xl font-bold text-center text-slate-900 mb-2">Welcome Back</Text>
         <Text className="text-slate-500 text-center text-sm mb-8">
           Sign in to access your classes
         </Text>

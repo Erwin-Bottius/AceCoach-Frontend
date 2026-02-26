@@ -1,5 +1,5 @@
-import React, { ComponentType } from "react";
-import { Text, TouchableOpacity, TouchableOpacityProps } from "react-native";
+import React, { type ComponentType } from "react";
+import { type TouchableOpacityProps, Text, TouchableOpacity } from "react-native";
 
 type PrimaryButtonProps = TouchableOpacityProps & {
   title: string;
@@ -23,9 +23,7 @@ export const PrimaryButton: React.FC<PrimaryButtonProps> = ({
       {...props}
     >
       <Text className="text-white font-bold">{title}</Text>
-      {Icon && iconName && (
-        <Icon name={iconName} size={iconSize} color={iconColor} />
-      )}
+      {Icon && iconName && <Icon name={iconName} size={iconSize} color={iconColor} />}
     </TouchableOpacity>
   );
 };
